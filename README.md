@@ -42,6 +42,24 @@ To find out if the set contains the key `bob`, we run the key through each of th
   <i>alice is not in the set because not every hash function mapped to a bit set to 1</i>
 </p>
 
+## False positives
+
+Since [collisions](https://en.wikipedia.org/wiki/Hash_collision) can happen some keys will be mapped to bits that were set to `1` when other keys were added to the set. In this case, the bloom filter will say that it contains the key even though it does not.
+
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/17282221/156584354-9b605741-0c11-4e1c-bf01-e9e5b61453d4.png" />
+</p>
+<p align="center">
+  <i>the bit-set after bob was added to it</i>
+</p>
+
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/17282221/156584791-cbde88f8-c13b-40e8-b568-e21cc3b82c86.png"/>
+</p>
+<p align="center">
+  <i>since john maps to the same bits as bob and the bits were set to 1 after bob was added to the set, we got a false positive</i>
+</p>
+
 # References
 
 Network Applications of Bloom Filters: A Survey - https://www.eecs.harvard.edu/~michaelm/postscripts/im2005b.pdf
