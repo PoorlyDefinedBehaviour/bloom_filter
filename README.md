@@ -28,6 +28,20 @@ To add the key `bob` to the set, we run the key through each of the `n` hash fun
 
 To find out if the set contains the key `bob`, we run the key through each of the `n` hash functions again -- since the hash functions must be deterministic they will **always** map to the same position in the bit-set -- and check if the bit is set to `1` for each of the bit-set positions we reached after running the key through the hash functions. If every hash function maps to a bit set to `1`, it means the key is in the set.
 
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/17282221/156583072-424f00f0-3eda-48ad-96c7-5a460beca424.png" />
+</p>
+<p align="center">
+  <i>bob is in the set because every hash function mapped it to a bit set to 1</i>
+</p>
+
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/17282221/156583592-e96d831c-21be-420a-ae10-2dde7f8a0cfe.png" />
+</p>
+<p align="center">
+  <i>alice is not in the set because not every hash function mapped to a bit set to 1</i>
+</p>
+
 # References
 
 Network Applications of Bloom Filters: A Survey - https://www.eecs.harvard.edu/~michaelm/postscripts/im2005b.pdf
