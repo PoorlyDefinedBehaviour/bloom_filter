@@ -24,6 +24,10 @@ To add the key `bob` to the set, we run the key through each of the `n` hash fun
   <i>bit-set after bob was added to the bloom filter</i>
 </p>
 
+## Finding out if the set contains an element
+
+To find out if the set contains the key `bob`, we run the key through each of the `n` hash functions again -- since the hash functions must be deterministic, they will **always** map to the same position in the bit-set -- and check if the bit is set to `1` for each of the bit-set positions we reached after running the key through the hash functions. If every hash functions maps to a bit set to `1`, it means the key is in the set.
+
 # References
 
 Network Applications of Bloom Filters: A Survey - https://www.eecs.harvard.edu/~michaelm/postscripts/im2005b.pdf
