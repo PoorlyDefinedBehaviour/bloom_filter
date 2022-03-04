@@ -1,6 +1,6 @@
 # Bloom filter
 
-A bloom filter is a data-structure that can be used to check if a set contains an element. It sacrifices accuracy to use way less memory than a conventional set.
+A [bloom filter](https://poorlydefinedbehaviour.github.io/posts/bloom_filter/) is a data-structure that can be used to check if a set contains an element. It sacrifices accuracy to use way less memory than a conventional set.
 
 Say we are building a [log-structured merge-tree](https://www.cs.umb.edu/~poneil/lsmtree.pdf), we can use a bloom filter to find out if the LSM-tree contains a particular key in O(1) time in most cases.
 
